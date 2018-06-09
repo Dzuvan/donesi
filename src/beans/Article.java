@@ -13,7 +13,8 @@ public class Article {
 	private float amount;
 	protected String isA;
 
-	public Article() {
+	public Article(String isA) {
+		this.isA = isA;
 	}
 
 	public Article(String name, float price, String description, float amount, String isA) {

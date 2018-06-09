@@ -70,7 +70,18 @@
 		<servlet-name>RestaurantListServlet</servlet-name>
 		<servlet-class>servlets.restaurant.RestaurantListServlet</servlet-class>
 	</servlet>
-	
+	<servlet>
+		<servlet-name>CreateRestaurantServlet</servlet-name>
+		<servlet-class>servlets.restaurant.CreateRestaurantServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EditRestaurantServlet</servlet-name>
+		<servlet-class>servlets.restaurant.EditRestaurantServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DeleteRestaurantServlet</servlet-name>
+		<servlet-class>servlets.restaurant.DeleteRestaurantServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>SignupServlet</servlet-name>
 		<url-pattern>/signup</url-pattern>
@@ -114,5 +125,17 @@
 	<servlet-mapping>
 		<servlet-name>RestaurantListServlet</servlet-name>
 		<url-pattern>/restaurantList</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateRestaurantServlet</servlet-name>
+		<url-pattern>/createRestaurant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EditRestaurantServlet</servlet-name>
+		<url-pattern>/editRestaurant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteRestaurantServlet</servlet-name>
+		<url-pattern>/deleteRestaurant</url-pattern>
 	</servlet-mapping>
 </web-app>

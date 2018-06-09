@@ -3,7 +3,7 @@ package beans;
 public class Meal extends Article {
 
 	public Meal() {
-		super();
+		super("meal");
 	}
 	
 	public Meal(String name, float price, String description, float weight) {
