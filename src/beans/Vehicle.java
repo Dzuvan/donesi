@@ -14,20 +14,29 @@ public class Vehicle {
 	private Year created;
 	private boolean inUsage;
 	private String notice;
+	private boolean active;
 
 	public Vehicle() {
 	}
 
-	public Vehicle(String manufacturer, String model, String type, String registration, Year created, boolean inUsage,
-			String notice) {
+	public Vehicle(String manufacturer, String model, String type, String registration, Year created, String notice) {
 		this.id = counter.incrementAndGet();
 		this.manufacturer = manufacturer;
 		this.model = model;
 		this.type = type;
 		this.registration = registration;
 		this.created = created;
-		this.inUsage = inUsage;
+		this.inUsage = false;
 		this.notice = notice;
+		this.active = true;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 	public long getId() {

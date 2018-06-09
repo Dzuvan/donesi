@@ -17,11 +17,11 @@
 		<div class="form-group">
 			<label for="category">Category</label> 
 			<select name="cateogry" required>
-				<option value="DomacaKuhinja">Domaca kuhinja</option>
-				<option value="Rostilj">Roštil</option>
-				<option value="KineskiRestoran">Kineski restoran</option>
-				<option value="IndijskiRestoran">Indijski restoran</option>
-				<option value="Poslasticarnica">Poslastičarnica</option>
+				<option value="Domaća kuhinja">Domaća kuhinja</option>
+				<option value="Roštilj">Roštilj</option>
+				<option value="Kineski restoran">Kineski restoran</option>
+				<option value="Indijski restoran">Indijski restoran</option>
+				<option value="Poslastičarnica">Poslastičarnica</option>
 				<option value="Picerija">Picerija</option>
 			</select>
 		</div>

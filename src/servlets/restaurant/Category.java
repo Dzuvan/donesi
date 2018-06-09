@@ -2,5 +2,5 @@ package servlets.restaurant;
 
 public enum Category {
 
-	DomacaKuhinja, Rostilj, KineskiRestoran, IndijskiRestoran, Poslasticarnica, Picerija
+	DomacaKuhinja, Roštilj, KineskiRestoran, IndijskiRestoran, Poslastičarnica, Picerija
 }
