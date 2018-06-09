@@ -21,7 +21,7 @@
 					class="nav-link" href="welcome">Home </a></li>
 				<li class='nav-item ${param.title=="Articles" ? "active" : ""}'><a
 					class="nav-link" href="articleList">Articles</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Disabled</a></li>
+				<li class='nav-item ${param.title=="Restaurants" ? "active" : ""}'><a class="nav-link" href="restaurantList">Restaurants</a></li>
 			</ul>
 			<c:choose>
 				<c:when test="${user.username != null }">

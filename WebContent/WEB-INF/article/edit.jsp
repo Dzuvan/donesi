@@ -8,22 +8,22 @@
 	<form method="post" action="editArticle">
 		<input type="hidden" name="id" value="${article.id }" />
 		<div class="form-group">
-			<label for="name">Name</label> <input type="text"
+			<label for="name">Name</label> <input type="text" required
 				class="form-control" id="name" name="name" value='${article.name}' />
 		</div>
 		<div class="form-group">
 			<label for="description">Description</label> <input type="text"
-				class="form-control" id="description" name="description"
+				class="form-control" id="description" name="description" required
 				value='${article.description}' />
 		</div>
 		<div class="form-group">
-			<label for="Amount">Amount</label> <input type="text"
-				class="form-control" id="amount" name="amount"
+			<label for="Amount">Amount</label> <input type="number" min="0"
+				class="form-control" id="amount" name="amount" required
 				value='${article.amount}' />
 		</div>
 		<div class="form-group">
-			<label for="price">Price</label> <input type="text"
-				class="form-control" id="price" name="price"
+			<label for="price">Price</label> <input type="number" min="0"
+				class="form-control" id="price" name="price" required
 				value='${article.price}' />
 		</div>
 		<div class="form-group">

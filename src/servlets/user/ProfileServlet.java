@@ -1,4 +1,4 @@
-package servlets;
+package servlets.user;
 
 import java.io.IOException;
 
@@ -8,28 +8,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet za odjavu korisnika.
+ * Servlet implementation class ProfileServlet
  */
-public class LogoutServlet extends HttpServlet {
+public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try {
-			request.getSession().removeAttribute("user");
-			request.getSession().invalidate();
-			request.setCharacterEncoding("UTF-8");
 
-//			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-			response.sendRedirect("login");
+		request.getRequestDispatcher("/WEB-INF/user/profile.jsp").forward(request, response);
+	}
 
-		} catch (Exception e) {
-			throw new ServletException();
-		}
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.sendRedirect("profile");
 
 	}
 

@@ -12,20 +12,17 @@ public class Order {
 	private Delivery delivery;
 	private String status;
 	private String notice;
-	private String comments;
 
 	public Order() {
 	}
 
-	public Order(LocalDateTime dateTime, Buyer buyer, Delivery delivery, String status, String notice,
-			String comments) {
+	public Order(LocalDateTime dateTime, Buyer buyer, Delivery delivery, String status, String notice) {
 		this.id = counter.incrementAndGet();
 		this.dateTime = dateTime;
 		this.buyer = buyer;
 		this.delivery = delivery;
 		this.status = status;
 		this.notice = notice;
-		this.comments = comments;
 	}
 
 	public LocalDateTime getDateTime() {
@@ -66,14 +63,6 @@ public class Order {
 
 	public void setNotice(String notice) {
 		this.notice = notice;
-	}
-
-	public String getComments() {
-		return comments;
-	}
-
-	public void setComments(String comments) {
-		this.comments = comments;
 	}
 
 	public long getId() {

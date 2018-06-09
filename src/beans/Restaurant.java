@@ -12,6 +12,7 @@ public class Restaurant {
 	private String category;
 	private ArrayList<Meal> meals = new ArrayList<>();
 	private ArrayList<Drink> drinks = new ArrayList<>();
+	private boolean active;
 
 	public Restaurant() {
 	}
@@ -21,6 +22,15 @@ public class Restaurant {
 		this.name = name;
 		this.address = address;
 		this.category = category;
+		this.active = true;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 	public long getId() {

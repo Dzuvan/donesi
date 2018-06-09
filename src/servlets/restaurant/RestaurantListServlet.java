@@ -1,4 +1,4 @@
-package servlets;
+package servlets.restaurant;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.Article;
-import dao.ArticleDAO;
+import beans.Restaurant;
+import dao.RestaurantDAO;
 
-public class ArticleListServlet extends HttpServlet {
+public class RestaurantListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -20,10 +20,11 @@ public class ArticleListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ArrayList<Article> articles = ArticleDAO.getInstance().getArticles();
-		
-		request.getServletContext().setAttribute("articles", articles);
-		request.getRequestDispatcher("/WEB-INF/article/list.jsp").forward(request, response);
+		ArrayList<Restaurant> restaurants = RestaurantDAO.getInstance().getRestaurants();
+
+		request.getServletContext().setAttribute("restaurants", restaurants);
+		request.getRequestDispatcher("/WEB-INF/restaurant/list.jsp").forward(request, response);
+
 	}
 
 	/**

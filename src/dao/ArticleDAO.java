@@ -52,8 +52,8 @@ public class ArticleDAO {
 	
 	private void save() {
 		RuntimeTypeAdapterFactory<Article> runtimeAdapterFactory = RuntimeTypeAdapterFactory.of(Article.class, "isA")
-				.registerSubtype(Meal.class, "buyer")
-				.registerSubtype(Drink.class, "delivery");
+				.registerSubtype(Meal.class, "meal")
+				.registerSubtype(Drink.class, "drink");
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.registerTypeAdapterFactory(runtimeAdapterFactory).create();
 		try (FileWriter file = new FileWriter(new File("articles.json"))) {
@@ -64,8 +64,8 @@ public class ArticleDAO {
 	
 	private void load() {
 		RuntimeTypeAdapterFactory<Article> runtimeAdapterFactory = RuntimeTypeAdapterFactory.of(Article.class, "isA")
-				.registerSubtype(Meal.class, "buyer")
-				.registerSubtype(Drink.class, "delivery");
+				.registerSubtype(Meal.class, "meal")
+				.registerSubtype(Drink.class, "drink");
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.registerTypeAdapterFactory(runtimeAdapterFactory).create();
 		try {

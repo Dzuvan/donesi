@@ -1,4 +1,4 @@
-package servlets;
+package servlets.article;
 
 import java.io.IOException;
 
@@ -7,10 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.Article;
+import beans.Drink;
+import beans.Meal;
 import dao.ArticleDAO;
 
-public class EditArticleServlet extends HttpServlet {
+public class CreateArticleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -19,10 +20,8 @@ public class EditArticleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		long id = Long.parseLong(request.getParameter("id"));
-		Article article = ArticleDAO.getInstance().getArticleById(id);
-		request.setAttribute("article", article);
-		request.getRequestDispatcher("/WEB-INF/article/edit.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/article/create.jsp").forward(request, response);
+
 	}
 
 	/**
@@ -32,20 +31,19 @@ public class EditArticleServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			long id = Long.parseLong(request.getParameter("id"));
+			String type = request.getParameter("type");
 			String name = request.getParameter("name");
 			String description = request.getParameter("description");
-			float price = Float.parseFloat(request.getParameter("price"));
 			float amount = Float.parseFloat(request.getParameter("amount"));
-			Article article = ArticleDAO.getInstance().getArticleById(id);
-
-			article.setAmount(amount);
-			article.setName(name);
-			article.setDescription(description);
-			article.setPrice(price);
-
-			ArticleDAO.getInstance().updateArticle(article);
-
+			float price = Float.parseFloat(request.getParameter("price"));
+			
+			if (type.equals("Meal")) {
+				Meal meal = new Meal(name, price, description, amount);
+				ArticleDAO.getInstance().create(meal);
+			} else {
+				Drink drink = new Drink(name, price, description, amount);
+				ArticleDAO.getInstance().create(drink);
+			}
 			response.sendRedirect("articleList");
 		} catch (Exception e) {
 			throw new ServletException(e);
