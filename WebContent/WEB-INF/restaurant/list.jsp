@@ -11,7 +11,7 @@
 		<c:if test="${item.active == true }">
 			<div class="card text-white bg-dark mb-3" style="width: 18rem;">
 				<div class="card-body">
-					<h5 class="card-title">${item.name }</h5>
+					<h5 class="card-title"><a href="restaurantDetails?id=${item.id}">${item.name }</a></h5>
 					<h5 class="card-subtitle mb-2 text-muted">${item.category }</h5>
 					<p class="card-text">${item.address}</p>
 					<a href="editRestaurant?id=${item.id }" class="btn btn-warning">Edit</a>

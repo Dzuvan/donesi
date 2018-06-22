@@ -82,6 +82,14 @@
 		<servlet-name>DeleteRestaurantServlet</servlet-name>
 		<servlet-class>servlets.restaurant.DeleteRestaurantServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>RestaurantDetailsServlet</servlet-name>
+		<servlet-class>servlets.restaurant.RestaurantDetailsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AddArticleToRestaurantServlet</servlet-name>
+		<servlet-class>servlets.restaurant.AddArticleToRestaurantServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>SignupServlet</servlet-name>
 		<url-pattern>/signup</url-pattern>
@@ -137,5 +145,13 @@
 	<servlet-mapping>
 		<servlet-name>DeleteRestaurantServlet</servlet-name>
 		<url-pattern>/deleteRestaurant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RestaurantDetailsServlet</servlet-name>
+		<url-pattern>/restaurantDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddArticleToRestaurantServlet</servlet-name>
+		<url-pattern>/addArticleToRestaurant</url-pattern>
 	</servlet-mapping>
 </web-app>

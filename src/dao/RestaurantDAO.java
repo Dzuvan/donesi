@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import beans.Article;
+import beans.Drink;
+import beans.Meal;
 import beans.Restaurant;
 import util.Serializator;
 
@@ -65,5 +68,15 @@ public class RestaurantDAO {
 		restaurants.replace(restaurant.getId(), restaurant);
 		Serializator.save(fileName, restaurants);
 		return restaurant;
+	}
+	
+	public void addArticle(Restaurant restaurant, Article article) {
+		Restaurant re = restaurants.values().stream().filter(r-> r.equals(restaurant)).findFirst().orElse(null);
+		if (article instanceof Drink) {
+			re.getDrinks().add((Drink)article);
+		} else  {
+			re.getMeals().add((Meal)article);
+		}
+		Serializator.save(fileName, restaurants);
 	}
 }

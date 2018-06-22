@@ -11,6 +11,7 @@ public class Article {
 	private String description;
 	private boolean active;
 	private float amount;
+	private Restaurant restaurant;
 	protected String isA;
 
 	public Article(String isA) {
@@ -69,5 +70,13 @@ public class Article {
 
 	public void setAmount(float amount) {
 		this.amount = amount;
+	}
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 }
